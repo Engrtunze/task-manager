@@ -20,19 +20,30 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@mikro-orm/cli": "^6.2.7",
     "@mikro-orm/core": "^6.2.7",
+    "@mikro-orm/migrations": "^6.2.7",
     "@mikro-orm/nestjs": "^5.2.3",
     "@mikro-orm/postgresql": "^6.2.7",
+    "@mikro-orm/reflection": "^6.2.7",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^3.2.2",
     "@nestjs/core": "^9.0.0",
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-socket.io": "^10.3.8",
+    "@nestjs/swagger": "^7.3.1",
     "@nestjs/websockets": "^10.3.8",
+    "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
+    "passport": "^0.7.0",
+    "passport-headerapikey": "^1.2.2",
     "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -75,5 +86,12 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }
