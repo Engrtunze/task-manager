@@ -22,6 +22,16 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+
+
+## ⚠️ Caution
+
+The secret keys in this project were intentionally exposed because it's a test project. If this were a live or real project, sensitive information such as secret keys and database credentials would not be pushed with the code. Exposing such information is a bad security practice. However, for the sake of ease and to quickly test and move forward, some things were left intentionally exposed.
+
+I always make sure to follow the best security practices and keep my sensitive information secure in real-world projects.
+
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
@@ -131,6 +141,19 @@ $ yarn run test:cov
 - `deleted`: boolean (default: `false`)
 - `user`: User (many-to-one relationship)
 
+
+## 🗄️ Database Migration
+
+To ensure the database schema is up-to-date, you need to run the database migrations. Follow these steps:
+
+1. **Generate Migration**: If you make changes to the entities, generate a new migration.
+   ```bash
+   npm run mikro-orm migration:create
+2. **Run Migration**: Apply the migrations to the database.
+   ```bash
+   npm run mikro-orm migration:up
+
+By default, the project is configured to use PostgreSQL. Ensure your PostgreSQL server is running and the connection details in the .env file are correct.
 ## WebSocket Session
 
 This section provides an overview of how to set up and use WebSocket sessions in our application.
