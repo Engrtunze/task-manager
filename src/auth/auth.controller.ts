@@ -18,12 +18,10 @@ export class AuthController {
 
   @Post('/signup')
   @HttpCode(HttpStatus.CREATED)
-  @ApiOkResponse({ status: HttpStatus.CREATED, type: UserCreatedDto })
+  @ApiOkResponse({ status: HttpStatus.CREATED })
   @ApiOperation({ summary: 'register a user' })
-  signUp(
-    @Body(ValidationPipe) authCredentialsDto: CreateUserDto,
-  ): Promise<UserCreatedDto> {
-    return this.authService.register(authCredentialsDto);
+  signUp(@Body(ValidationPipe) authCredentialsDto: CreateUserDto) {
+    this.authService.register(authCredentialsDto);
   }
 
   @Post('/login')
