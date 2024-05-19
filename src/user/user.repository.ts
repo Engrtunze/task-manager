@@ -6,7 +6,6 @@ export class UserRepository extends EntityRepository<User> {
     super(entityManager, User);
   }
   async createUser(user: User) {
-    console.log('get here!!!!');
     await this.entityManager.persistAndFlush(user);
     return user;
   }

@@ -1,7 +1,6 @@
 import { EntityManager } from '@mikro-orm/core';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UserMapper } from 'src/mappers/user.mapper';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
 import { LogInUserDto } from 'src/user/dto/login.dto';
 import { UserCreatedDto } from 'src/user/dto/user-created.dto';
@@ -17,12 +16,9 @@ export class AuthService {
     private jwtService: JwtService,
     private readonly entityManager: EntityManager,
     private readonly userService: UserService,
-    private readonly userMapper: UserMapper,
   ) {}
 
-  public async register(
-    registrationData: CreateUserDto,
-  ): Promise<UserCreatedDto> {
+  public async register(registrationData: CreateUserDto) {
     try {
       const userExist = await this.userService.findUser(
         registrationData.userName,
@@ -37,8 +33,6 @@ export class AuthService {
         ...registrationData,
         password: hashedPassword,
       });
-      const value = this.userMapper.mapToUserCreatedDto(createdUser);
-      return value;
     } catch (err) {
       throw new DataConflictException(err.message);
     }

@@ -4,13 +4,11 @@ import { UserService } from './user.service';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { User } from './user.entity';
 import { JwtModule } from '@nestjs/jwt';
-import { UserMapper } from 'src/mappers/user.mapper';
-import { UserRepository } from './user.repository';
 
 @Module({
   imports: [MikroOrmModule.forFeature([User]), JwtModule],
   controllers: [UserController],
-  providers: [UserService, UserMapper],
+  providers: [UserService],
   exports: [UserService],
 })
 export class UserModule {}

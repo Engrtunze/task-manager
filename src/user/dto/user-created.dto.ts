@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
 
 export class UserCreatedDto {
   @ApiProperty()
@@ -15,4 +16,6 @@ export class UserCreatedDto {
   createdAt: Date;
   @ApiProperty()
   updatedAt: Date;
+  @Exclude() // Exclude the 'password' property from transformation
+  password: string;
 }

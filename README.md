@@ -25,6 +25,52 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# 📝 Task Management System API Documentation
+
+Welcome to the Task Management System API documentation! This comprehensive guide will walk you through everything you need to know to understand, use, and contribute to the API. Let's get started! 🚀
+
+## 📋 Table of Contents
+
+- [Introduction](#-introduction)
+- [Technologies Used](#-technologies-used)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [API Endpoints](#-api-endpoints)
+  - [Authentication](#authentication)
+  - [Task Management](#task-management)
+- [WebSocket Integration](#-websocket-integration)
+- [Data Models](#-data-models)
+- [Error Handling](#-error-handling)
+- [Conclusion](#-conclusion)
+
+## 🌟 Introduction
+
+This API provides a simple task management system with user authentication, task CRUD operations, and real-time updates via WebSockets. The application is built using NestJS and TypeORM.
+
+## 🛠 Technologies Used
+
+- **NestJS**: A progressive Node.js framework for building efficient and scalable server-side applications.
+- **TypeORM**: An ORM for TypeScript and JavaScript.
+- **SQLite**: A lightweight database.
+- **JWT**: JSON Web Tokens for secure user authentication.
+- **WebSockets**: For real-time data updates.
+
+## 🚀 Getting Started
+
+### 📦 Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- A code editor (e.g., VSCode)
+
+### 🔧 Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd task-management-api
 
 ## Installation
 
@@ -58,16 +104,44 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## Support
+ **The application will be running at http://localhost:3000.**:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+ ## 🔗 API Endpoints Documentation can be found http://localhost:3000/v1/docs#/
+ ## to call an api endpoint http://localhost:3000/v1/{endpoints}
+ 
+## 🗂 Data Models
 
-## Stay in touch
+### User
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- `id`: number (primary key)
+- `username`: string (unique)
+- `firstname`: string
+- `lastname`: string
+- `password`: string
+- `lastlogin`: Date
 
-## License
+### Task
 
-Nest is [MIT licensed](LICENSE).
+- `id`: number (primary key)
+- `title`: string
+- `description`: string
+- `status`: string
+- `deleted`: boolean (default: `false`)
+- `user`: User (many-to-one relationship)
+
+## ❗ Error Handling
+
+The API uses standard HTTP status codes to indicate the success or failure of an API request. Here are some common status codes you might encounter:
+
+- **200 OK**: The request was successful.
+- **201 Created**: The resource was successfully created.
+- **400 Bad Request**: The request was invalid.
+- **401 Unauthorized**: Authentication failed.
+- **404 Not Found**: The requested resource was not found.
+- **500 Internal Server Error**: An error occurred on the server.
+
+## 🚀 Conclusion
+
+Thank you for using the Task Management System API! I hope this documentation has provided you with all the information you need to get started and effectively use the API. If you have any questions or need further assistance, feel free to reach out.
+
+Happy coding and testing! 🎉🚀
