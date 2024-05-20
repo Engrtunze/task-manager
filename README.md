@@ -148,10 +148,10 @@ To ensure the database schema is up-to-date, you need to run the database migrat
 
 1. **Generate Migration**: If you make changes to the entities, generate a new migration.
    ```bash
-   np run mikro-orm migration:create
+   npx run mikro-orm migration:create
 2. **Run Migration**: Apply the migrations to the database.
    ```bash
-   np run mikro-orm migration:up
+   npx run mikro-orm migration:up
 
 By default, the project is configured to use PostgreSQL. Ensure your PostgreSQL server is running and the connection details in the .env file are correct.
 ## WebSocket Session
@@ -168,13 +168,10 @@ To establish a WebSocket connection, follow these steps:
 
 after running the app you can test websocket using postman 
 - click on new then select websocket
-
-![](/Users/engrtunze/Documents/Screenshot 2024-05-19 at 9.36.08 PM.png)
-
+![Screenshot 2024-05-19 at 9.35.28 PM.png](images%2FScreenshot%202024-05-19%20at%209.35.28%E2%80%AFPM.png)
 - click on the icon closer to the url then select socket.io just like the image below
 
-![](/Users/engrtunze/Documents/Screenshot 2024-05-19 at 9.35.28 PM.png)
-
+![Screenshot 2024-05-19 at 9.35.40 PM.png](images%2FScreenshot%202024-05-19%20at%209.35.40%E2%80%AFPM.png)
 * then type in the url as seen in the image afterwards add the events to be listen to in the event tab
 ####  Events
 - taskCreated
@@ -182,8 +179,7 @@ after running the app you can test websocket using postman
 - taskDeleted
 - taskRetrieved
 http://localhost:3000/events
-![](/Users/engrtunze/Documents/Screenshot 2024-05-19 at 9.35.40 PM.png)
-
+![Screenshot 2024-05-19 at 9.35.40 PM.png](images%2FScreenshot%202024-05-19%20at%209.35.40%E2%80%AFPM.png)
 N:B :- always make sure you click on connect everytime the server restarts 
 
 
