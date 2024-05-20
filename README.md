@@ -148,10 +148,10 @@ To ensure the database schema is up-to-date, you need to run the database migrat
 
 1. **Generate Migration**: If you make changes to the entities, generate a new migration.
    ```bash
-   npm run mikro-orm migration:create
+   npx run mikro-orm migration:create
 2. **Run Migration**: Apply the migrations to the database.
    ```bash
-   npm run mikro-orm migration:up
+   npx run mikro-orm migration:up
 
 By default, the project is configured to use PostgreSQL. Ensure your PostgreSQL server is running and the connection details in the .env file are correct.
 ## WebSocket Session
